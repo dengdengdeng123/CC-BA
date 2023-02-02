@@ -141,8 +141,8 @@ for train , test in kf.split(X):
     cnn_feature = Flatten(name='Flatten1')(fc1)
 
     convs2.append(cnn_feature)
-    inputs2 = Embedding(256, 32, input_length=784)(inputs)
-    inputs3 = Reshape((784, 32))(inputs2)
+    inputs2 = Embedding(256, 64, input_length=784)(inputs)
+    inputs3 = Reshape((784, 64))(inputs2)
     conv2_1 = Bidirectional(GRU(32, dropout=0.5, return_sequences=True))(inputs3)
     conv2_2 = Bidirectional(GRU(64, dropout=0.5))(conv2_1)
 
