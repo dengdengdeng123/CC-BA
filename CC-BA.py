@@ -154,7 +154,7 @@ for train , test in kf.split(X):
     convs2.append(z)
     for conv in convs2:
         print(conv)
-    merge2 = convs2[0]+convs2[1]
+    merge2 = 0.6*convs2[0]+0.4*convs2[1]
     shape = merge2.shape[-1]
 
     output = Dense(10, activation='softmax')(merge2)
