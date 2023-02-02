@@ -176,7 +176,7 @@ for train , test in kf.split(X):
     adam = Adam(lr=0.0001, beta_1=0.9, beta_2=0.99, epsilon=1e-06, decay=0.0)
     model.compile(loss="categorical_crossentropy", optimizer=adam, metrics=['accuracy'])
 
-    h = model.fit(X_train, Y_train, batch_size=64, class_weight=class_weight, epochs=57, verbose=1,
+    h = model.fit(X_train, Y_train, batch_size=64, epochs=57, verbose=1,
                   validation_split=0.1)
     # model.save('1d_cnn-bigru.h5')
 
