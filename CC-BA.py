@@ -35,7 +35,7 @@ def channel_block(inputs,ratio=4):
     out = Multiply()([inputs,x])
     return out
 
-inputs = Input(shape=(784, 1))
+inputs = Input()
 conv1_1 = Conv1D(name='conv1_1', filters=32, kernel_size=3, activation='relu', padding="same")(inputs)
 dp1_1 = Dropout(0.5)(conv1_1)
 conv1_2 = Conv1D(name='conv1_2', filters=32, strides=5, kernel_size=3, activation='relu', padding="same")(dp1_1)
